@@ -15,8 +15,8 @@ const getAnimeData = async (
       sortOrder: "asc",
     },
     headers: {
-      "X-RapidAPI-Key": "83c760a53amsh3ba770772a3fa97p1eccf2jsnb3e989266ac8",
-      "X-RapidAPI-Host": "anime-db.p.rapidapi.com",
+      "X-RapidAPI-Key": `${process.env.RAPIDAPIKEY}`,
+      "X-RapidAPI-Host": `${process.env.RAPIDAPIHOST}`,
     },
   };
 
@@ -29,8 +29,8 @@ const getAnimeById = async (id: String) => {
     method: "GET",
     url: `https://anime-db.p.rapidapi.com/anime/by-id/${id}`,
     headers: {
-      "X-RapidAPI-Key": "83c760a53amsh3ba770772a3fa97p1eccf2jsnb3e989266ac8",
-      "X-RapidAPI-Host": "anime-db.p.rapidapi.com",
+      "X-RapidAPI-Key": `${process.env.RAPIDAPIKEY}`,
+      "X-RapidAPI-Host": `${process.env.RAPIDAPIHOST}`,
     },
   };
 
