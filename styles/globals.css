@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-#widget76 {
-    width: 500px;
-    height: 700px;
+#nprogress .bar {
+    background: rgb(255, 1, 39) !important;
+    height: 4px;
 }

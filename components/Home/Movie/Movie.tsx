@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { Meta, Movie } from "@/type";
 import { useRouter } from "next/router";
-
-import React from "react";
+import LoadingBar from "react-top-loading-bar";
+import React, { useRef } from "react";
 import MovieCard from "./MovieCard";
 
 interface Props {
@@ -12,6 +12,8 @@ interface Props {
 }
 
 const Movie = ({ movies, title, moviesMeta }: Props) => {
+  const ref = useRef(null);
+
   const previousPage = moviesMeta.page > 1;
   const nextPage = moviesMeta.totalPage > moviesMeta.page;
   const nextPagePath = `/movie-page/${moviesMeta.page + 1}`;
@@ -30,6 +32,7 @@ const Movie = ({ movies, title, moviesMeta }: Props) => {
         </div>
       </div>
       <div className="text-center space-x-4 mt-10 mb-6">
+        <LoadingBar color="#f11946" ref={ref} />
         {previousPage && (
           <button
             onClick={() => {
