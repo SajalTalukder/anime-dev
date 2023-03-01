@@ -1,0 +1,13 @@
+Feature already build : 
+
+1) Search anime movie or series
+2) pagination 
+3) movie series details page 
+4) mobile responsive
+5) Tailer of movies only
+6) Google authentication
+
+Feature to build : 
+1)user can add fovorite 
+2) user can add watch or not watch
+2) firestore database

@@ -7,6 +7,7 @@ import { Meta, Movie } from "@/type";
 import { getAnimeData } from "@/utils/apiCall";
 import { GetStaticProps } from "next";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 import React from "react";
 
 interface Props {
@@ -17,11 +18,13 @@ interface Props {
 
 const Search = ({ movies, title, moviesMeta }: Props) => {
   const { data: session, status } = useSession();
+  const router = useRouter();
   if (status === "loading") {
     return <Loader />;
   }
 
   if (!session?.user) {
+    router.replace("/");
     return <SignIn />;
   }
   const condition = !(movies.length > 0);
